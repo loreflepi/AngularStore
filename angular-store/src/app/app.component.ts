@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-store';
+  description = 'For Harry Potter fans';
+  casita = '';
+  casas: Array<string> = ['Hufflepuff', 'Griffindor', 'Ravenclaw', 'Slythering'];
+
+  addHouses( nombre: string): void {
+    this.casas.push(nombre);
+  }
+
+  deleteHouse(i: number): void {
+    this.casas.splice(i, 1 );
+  }
 }
