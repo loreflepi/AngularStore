@@ -2,10 +2,17 @@
 <h1>{{description}}</h1>
 <input type="text" placeholder="Type your house" [(ngModel)]="casita"/>
 
-<div *ngIf="description === 'morchi'">
-  <p>Que bien te ves</p>
+<app-product></app-product>
+
+<div [ngSwitch]="casita">
+  <p *ngSwitchCase="'Hufflepuff'">Your house is {{casita}}</p>
+  <p *ngSwitchCase="'Gryffindor'">Your house is {{casita}}</p>
+  <p *ngSwitchCase="'Ravenclaw'">Your house is {{casita}}</p>
+  <p *ngSwitchCase="'Slytherin'">Your house is {{casita}}</p>
 </div>
+
 <button (click)="addHouses(casita)">Add House</button>
+
 <ul>
   <p *ngIf="casas.length === 0">There is no Hogwarts anymore</p>
   <li *ngFor="let iterador of casas; index as i">
@@ -13,3 +20,10 @@
     <button (click)="deleteHouse(i)">Delete House</button>
   </li>
 </ul>
+
+<div *ngFor= "let product of products">
+  {{product.title}}
+  <img [src]="product.image">
+  {{product.price}}
+  {{product.description}}
+</div>
