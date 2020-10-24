@@ -2,8 +2,6 @@
 <h1>{{description}}</h1>
 <input type="text" placeholder="Type your house" [(ngModel)]="casita"/>
 
-<app-product></app-product>
-
 <div [ngSwitch]="casita">
   <p *ngSwitchCase="'Hufflepuff'">Your house is {{casita}}</p>
   <p *ngSwitchCase="'Gryffindor'">Your house is {{casita}}</p>
@@ -22,8 +20,5 @@
 </ul>
 
 <div *ngFor= "let product of products">
-  {{product.title}}
-  <img [src]="product.image">
-  {{product.price}}
-  {{product.description}}
+  <app-product [product]="product" (itemAdded)="itemHandler($event)"></app-product>
 </div>

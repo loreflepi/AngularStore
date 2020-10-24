@@ -46,4 +46,8 @@ export class AppComponent {
   deleteHouse(i: number): void {
     this.casas.splice(i, 1 );
   }
+
+  itemHandler(title: string): void {
+    console.log(`en el carrito se agrega ${title}`);
+  }
 }

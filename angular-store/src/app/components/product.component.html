@@ -1,1 +1,5 @@
-<h1>Hola soy un componente de un producto</h1>
+{{product.title}}
+<img [src]="product.image" height="200px" width="200px" >
+{{product.price}}
+{{product.description}}
+<button (click)="addItem()">Agregar al carrito</button>
