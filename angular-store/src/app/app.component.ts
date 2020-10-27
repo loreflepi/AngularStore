@@ -15,25 +15,25 @@ export class AppComponent {
   products: Product[] = [
     {
       title: 'Goblet of Fire book',
-      price: '1000',
+      price: 1000,
       image: 'assets/images/gfbook.jpg',
       description: ',vlf'
     },
     {
       title: 'Hogwarts hoodie',
-      price: '2000',
+      price: 2000,
       image: 'assets/images/hoodie.jpg',
       description: ',vlf'
     },
     {
       title: 'Hufflepuff mask',
-      price: '2500',
+      price: 2500,
       image: 'assets/images/huffmask.jpg',
       description: ',vlf'
     },
     {
       title: 'Acceptance letter',
-      price: '4500',
+      price: 4500,
       image: 'assets/images/letter.jpg',
       description: ',vlf'
     }
@@ -49,5 +49,9 @@ export class AppComponent {
 
   itemHandler(title: string): void {
     console.log(`en el carrito se agrega ${title}`);
+  }
+
+  deleteItem(i: number): void{
+    this.products.splice(i, 1);
   }
 }

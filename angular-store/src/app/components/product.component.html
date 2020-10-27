@@ -1,5 +1,8 @@
-{{product.title}}
-<img [src]="product.image" height="200px" width="200px" >
-{{product.price}}
-{{product.description}}
-<button (click)="addItem()">Agregar al carrito</button>
+<div class="product--items">
+  <p class="product--items__title">{{product.title}}</p>
+  <img [src]="product.image" height="200px" width="200px" >
+  {{product.price}}
+  {{product.description}}
+  <button (click)="addItem()">Agregar al carrito</button>
+</div>
+
