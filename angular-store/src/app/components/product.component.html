@@ -1,11 +1,11 @@
 <div class="product--items">
   <div class="product--items__style">
-    <p class="product--items__text">{{product.title}}</p>
+    <p class="product--items__text">{{product.title | uppercase}}</p>
   </div>
   <img class="product--items__img" [src]="product.image" height="200px" width="200px" >
   <div class="product--items__price">
-    <p>{{product.price}}</p>
-    <p>{{product.description}}</p>
+    <p>{{product.price | currency: 'COP':'symbol-narrow':'1.0-0'}}</p>
+    <p>{{product.description | slice:0:10 | words}}</p>
   </div>
 
   <div class="product--items__style product--items__btn" (click)="addItem()">
