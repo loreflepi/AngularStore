@@ -1,8 +1,16 @@
 <div class="product--items">
-  <p class="product--items__title">{{product.title}}</p>
-  <img [src]="product.image" height="200px" width="200px" >
-  {{product.price}}
-  {{product.description}}
-  <button (click)="addItem()">Agregar al carrito</button>
+  <div class="product--items__style">
+    <p class="product--items__text">{{product.title | uppercase}}</p>
+  </div>
+  <img class="product--items__img" [src]="product.image" height="200px" width="200px" >
+  <div class="product--items__price">
+    <p>{{product.price | currency: 'COP':'symbol-narrow':'1.0-0'}}</p>
+    <p>{{product.description | slice:0:10 | words}}</p>
+  </div>
+
+  <div class="product--items__style product--items__btn" (click)="addItem()">
+    <p>Agregar al carrito</p>
+    <img class="product--items__style__img" src="assets/images/cart.png" height="20px" width="20px" >
+  </div>
 </div>
 
