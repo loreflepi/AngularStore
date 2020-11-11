@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {Product} from './product.model';
 
@@ -7,7 +7,7 @@ import {Product} from './product.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'angular-store';
   description = 'For Harry Potter fans';
   casita = '';
@@ -26,6 +26,30 @@ export class AppComponent {
       description: 'bla bla bla bla bla'
     },
     {
+      title: 'Hogwarts hoodie',
+      price: 2000,
+      image: 'assets/images/hoodie.png',
+      description: 'bla bla bla bla bla'
+    },
+    {
+      title: 'Hogwarts hoodie',
+      price: 2000,
+      image: 'assets/images/hoodie.png',
+      description: 'bla bla bla bla bla'
+    },
+    {
+      title: 'Hogwarts hoodie',
+      price: 2000,
+      image: 'assets/images/hoodie.png',
+      description: 'bla bla bla bla bla'
+    },
+    {
+      title: 'Hogwarts hoodie',
+      price: 6000,
+      image: 'assets/images/hoodie.png',
+      description: 'bla bla bla bla bla'
+    },
+    {
       title: 'Hufflepuff mask',
       price: 2500,
       image: 'assets/images/huffmask.png',
@@ -38,6 +62,21 @@ export class AppComponent {
       description: 'bla bla bla bla bla'
     }
   ];
+
+  ngOnInit(): void {
+    this.deleteDuplicates();
+  }
+
+  deleteDuplicates(): void{
+    const auxProduct: Set<string> = new Set();
+    this.products = this.products.filter(value => {
+      if (auxProduct.has(JSON.stringify(value))){
+        return false;
+      }
+      auxProduct.add(JSON.stringify(value));
+      return true;
+    });
+}
 
   addHouses( nombre: string): void {
     this.casas.push(nombre);
