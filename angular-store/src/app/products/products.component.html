@@ -1,0 +1,4 @@
+<div class="products--container">
+  <app-product *ngFor= "let product of products; index as i" [product]="product" (itemAdded)="itemHandler($event)"></app-product>
+  <!--  <button (click)="deleteItem(i)">Delete Product</button>-->
+</div>
