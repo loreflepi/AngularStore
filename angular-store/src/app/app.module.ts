@@ -9,6 +9,7 @@ import { WordsPipe } from './pipes/words.pipe';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ContactComponent } from './contact/contact.component';
     WordsPipe,
     HomeComponent,
     ProductsComponent,
-    ContactComponent
+    ContactComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
