@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../product.model';
+import { Product } from '../product.model';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -8,71 +9,24 @@ import {Product} from '../product.model';
 })
 export class ProductsComponent implements OnInit {
 
-  products: Product[] = [
-    {
-      title: 'Goblet of Fire book',
-      price: 1000,
-      image: 'assets/images/gfbook.png',
-      description: 'bla bla bla bla bla'
-    },
-    {
-      title: 'Hogwarts hoodie',
-      price: 2000,
-      image: 'assets/images/hoodie.png',
-      description: 'bla bla bla bla bla'
-    },
-    {
-      title: 'Hogwarts hoodie',
-      price: 2000,
-      image: 'assets/images/hoodie.png',
-      description: 'bla bla bla bla bla'
-    },
-    {
-      title: 'Hogwarts hoodie',
-      price: 2000,
-      image: 'assets/images/hoodie.png',
-      description: 'bla bla bla bla bla'
-    },
-    {
-      title: 'Hogwarts hoodie',
-      price: 2000,
-      image: 'assets/images/hoodie.png',
-      description: 'bla bla bla bla bla'
-    },
-    {
-      title: 'Hogwarts hoodie',
-      price: 6000,
-      image: 'assets/images/hoodie.png',
-      description: 'bla bla bla bla bla'
-    },
-    {
-      title: 'Hufflepuff mask',
-      price: 2500,
-      image: 'assets/images/huffmask.png',
-      description: 'bla bla bla bla bla'
-    },
-    {
-      title: 'Acceptance letter',
-      price: 4500,
-      image: 'assets/images/letter.png',
-      description: 'bla bla bla bla bla'
-    }
-  ];
+  products: Product[];
 
-  constructor() {
-  }
+  constructor(
+    private servicio: ProductService
+  ) {  }
 
   ngOnInit(): void {
+    this.products = this.servicio.getAllProducts();
     this.deleteDuplicates();
   }
 
   deleteDuplicates(): void{
     const auxProduct: Set<string> = new Set();
     this.products = this.products.filter(value => {
-      if (auxProduct.has(JSON.stringify(value))){
+      if (auxProduct.has(value.title)){
         return false;
       }
-      auxProduct.add(JSON.stringify(value));
+      auxProduct.add((value.title));
       return true;
     });
   }
