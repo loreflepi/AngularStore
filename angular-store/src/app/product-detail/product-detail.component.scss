@@ -1,0 +1,38 @@
+.container{
+  display:flex;
+  background-color: white;
+  margin: 30px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  justify-content: center;
+}
+
+.container--image{
+  display: flex;
+  margin: 20px;
+}
+
+.container--image img {
+  max-width: 80%;
+  height: auto;
+}
+
+.product--items__style{
+  background-color: #540f1e;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  display: flex;
+}
+
+.product--items__btn{
+  cursor: pointer;
+  display: flex;
+  align-items: center ;
+  justify-content: space-evenly;
+}
+
+.container--text__desc{
+  font-size: medium;
+  color: gray;
+}

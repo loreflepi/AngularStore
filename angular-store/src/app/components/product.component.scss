@@ -21,6 +21,10 @@
   margin: 0;
 }
 
+.product--items__text, .product--items__img{
+  cursor: pointer;
+}
+
 .product--items__img{
   padding: 12px;
 }

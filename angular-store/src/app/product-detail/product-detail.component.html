@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="container--image">
+    <img [src]="producto.image" alt="Imagen del producto">
+  </div>
+  <div>
+    <h2>{{producto.title}}</h2>
+    <h2 class="container--text__desc">{{producto.description}}</h2>
+    <h2>{{producto.price | currency: 'COP':'symbol-narrow':'1.0-0'}}</h2>
+    <div >
+      <div class="product--items__style product--items__btn">
+        <p>Agregar al carrito</p>
+        <img class="product--items__style__img" src="assets/images/cart.png" height="20px" width="20px" >
+      </div>
+    </div>
+  </div>
+</div>
