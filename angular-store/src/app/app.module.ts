@@ -15,6 +15,7 @@ import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     BannerComponent,
     FooterComponent,
     NotfoundComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
