@@ -4,16 +4,18 @@ import { HomeComponent } from './components/home/home.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HomeRoutingModule} from './home-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { ProductsModule } from '../products/products.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    BannerComponent,
+    BannerComponent
   ],
   imports: [
     HomeRoutingModule,
     CommonModule,
     SharedModule,
+    ProductsModule
   ]
 })
 
