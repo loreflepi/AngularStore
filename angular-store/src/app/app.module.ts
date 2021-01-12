@@ -4,35 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { ProductComponent } from './components/product.component';
-import { WordsPipe } from './pipes/words.pipe';
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/demo.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NotfoundComponent } from './notfound/notfound.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
+import { SharedModule } from './modules/shared/shared.module';
+import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
-    WordsPipe,
-    ProductsComponent,
-    ContactComponent,
-    DemoComponent,
-    HeaderComponent,
-    FooterComponent,
-    NotfoundComponent,
-    ProductDetailComponent,
     LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
