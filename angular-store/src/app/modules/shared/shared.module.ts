@@ -8,6 +8,7 @@ import { FooterComponent } from '../shared/components/footer/footer.component';
 import { DemoComponent } from '../shared/components/demo/demo.component';
 import { NotfoundComponent } from '../shared/components/notfound/notfound.component';
 import { WordsPipe } from '../shared/pipes/words.pipe';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { WordsPipe } from '../shared/pipes/words.pipe';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }
