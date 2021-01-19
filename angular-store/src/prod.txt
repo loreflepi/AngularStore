@@ -1,0 +1,1 @@
+ng build --prod --base-href https://loreflepi.github.io/AngularStore/angular-store/dist/angular-store/
