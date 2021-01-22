@@ -1,5 +1,10 @@
-<nav>
-  <a routerLink="/home" routerLinkActive="activo">Home</a>
-  <a routerLink="/products" routerLinkActive="activo">Products</a>
-  <a routerLink="/contact" routerLinkActive="activo">Contact</a>
+<nav class="header--container">
+  <div class="element--container">
+    <a class="header-element" routerLink="/home" routerLinkActive="activo">Home</a>
+    <a class="header-element" routerLink="/products" routerLinkActive="activo">Products</a>
+    <a class="header-element" routerLink="/contact" routerLinkActive="activo">Contact</a>
+  </div>
+  <a class="header-cart" mat-raised-button matBadge="8" matBadgePosition="before" matBadgeColor="accent" href="">
+    <span class="material-icons"> shopping_cart</span>
+    Carrito</a>
 </nav>
