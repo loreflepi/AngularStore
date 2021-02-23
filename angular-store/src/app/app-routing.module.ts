@@ -36,6 +36,11 @@ const routes: Routes = [
     component: DemoComponent
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+    // component: ContactComponent
+  },
+  {
     path: '**',
     component: NotfoundComponent
   }

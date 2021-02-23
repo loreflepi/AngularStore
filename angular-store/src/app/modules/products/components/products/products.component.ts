@@ -16,19 +16,20 @@ export class ProductsComponent implements OnInit {
   ) {  }
 
   ngOnInit(): void {
-    this.products = this.servicio.getAllProducts();
-    this.deleteDuplicates();
+    // this.products = this.servicio.getAllProducts();
+    this.fetchProducts();
   }
 
-  deleteDuplicates(): void{
+  deleteDuplicates(products: Product[]): Product[]{
     const auxProduct: Set<string> = new Set();
-    this.products = this.products.filter(value => {
+    products = products.filter(value => {
       if (auxProduct.has(value.title)){
         return false;
       }
       auxProduct.add((value.title));
       return true;
     });
+    return products;
   }
 
   itemHandler(title: string): void {
@@ -37,6 +38,10 @@ export class ProductsComponent implements OnInit {
 
   deleteItem(i: number): void{
     this.products.splice(i, 1);
+  }
+
+  fetchProducts(): void{
+    this.servicio.getAllProducts().subscribe(value => this.products = this.deleteDuplicates(value));
   }
 
 }
