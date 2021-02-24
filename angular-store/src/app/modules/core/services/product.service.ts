@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Product} from '../../../product.model';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -71,12 +72,16 @@ export class ProductService {
   ) {  }
 
   getAllProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>('https://sleepy-brushlands-99778.herokuapp.com/products');
+    return this.http.get<Product[]>(`${environment.url_api}/products/`);
     // this.products;
   }
 
   getProductByID(id: number): Observable<Product>{
-    return this.http.get<Product>(`https://sleepy-brushlands-99778.herokuapp.com/products/${id}`);
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
     // this.products.find(value => id === value.id);
+  }
+
+  createProduct(product: Product): Observable<Product>{
+    return this.http.post<Product>(`${environment.url_api}/products/`, product);
   }
 }

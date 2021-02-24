@@ -23,4 +23,14 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  createProduct(): void{
+    const productoNuevo: Product = {
+      id: null,
+      title: 'Nuevo Producto',
+      image: 'assets/images/gfbook.png',
+      price: 1000,
+      description: 'Mi producto nuevo'
+    };
+    this.servicio.createProduct(productoNuevo).subscribe(value => console.log(value));
+  }
 }
