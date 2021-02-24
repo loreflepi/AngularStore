@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="producto">
   <div class="container--image">
     <img [src]="producto.image" alt="Imagen del producto">
   </div>
@@ -9,6 +9,10 @@
     <div >
       <div class="product--items__style product--items__btn">
         <p>Agregar al carrito</p>
+        <span class="material-icons" height="20px" width="20px"> shopping_cart</span>
+      </div>
+      <div class="product--items__style product--items__btn" (click)="createProduct()">
+        <p>Crear Producto</p>
         <span class="material-icons" height="20px" width="20px"> shopping_cart</span>
       </div>
     </div>
