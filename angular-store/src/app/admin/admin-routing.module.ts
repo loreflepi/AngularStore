@@ -4,6 +4,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { NavAdminComponent } from './components/nav-admin/nav-admin.component';
 import { TableAdminComponent } from './components/table-admin/table-admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {ProductListComponent} from './components/product-list/product-list.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'products',
+        component: ProductListComponent
       },
     ]
   },

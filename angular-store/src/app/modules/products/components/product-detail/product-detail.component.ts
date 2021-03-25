@@ -33,4 +33,19 @@ export class ProductDetailComponent implements OnInit {
     };
     this.servicio.createProduct(productoNuevo).subscribe(value => console.log(value));
   }
+
+  updateProduct(id: number): void{
+    const productoActualizar: Partial<Product> = {
+      id,
+      title: 'Nuevo Producto',
+      price: 9900,
+      description: 'Mi producto actualizado',
+      image: 'assets/images/gfbook.png'
+    };
+    this.servicio.updateProduct(id, productoActualizar).subscribe(value => console.log(value));
+  }
+
+  deleteProduct(id: number): void{
+    this.servicio.deleteProduct(id).subscribe(value => console.log(value));
+  }
 }
