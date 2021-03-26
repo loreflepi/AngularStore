@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  emailField: FormControl;
 
-  constructor() { }
+  constructor() {
+    this.emailField = new FormControl('', [Validators.email, Validators.required]);
+    this.emailField.valueChanges.subscribe(value => console.log(value));
+  }
 
   ngOnInit(): void {
   }

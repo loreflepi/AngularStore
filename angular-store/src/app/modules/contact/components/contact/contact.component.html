@@ -1,1 +1,13 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <h1> Suscríbete a nuestro newsletter</h1>
+  <mat-form-field class="example-full-width email-form">
+    <mat-label>Email</mat-label>
+    <input matInput [formControl]="emailField" type="text" placeholder="Ex. example@example.com">
+    <mat-error *ngIf="emailField.invalid">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <div class="product--items__style product--items__btn">
+    <p>Suscríbete</p>
+  </div>
+</div>

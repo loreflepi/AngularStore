@@ -1,0 +1,27 @@
+.contact-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  margin-bottom: 65.2vh;
+}
+
+.product--items__style{
+  background-color: #540f1e;
+  width: 20%;
+  min-width: 100px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+}
+
+.product--items__btn{
+  cursor: pointer;
+  display: flex;
+  align-items: center ;
+  justify-content: space-evenly;
+}
+
+.email-form{
+  width: 50%;
+}

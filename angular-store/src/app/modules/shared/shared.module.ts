@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
@@ -23,13 +23,15 @@ import { MaterialModule } from '../material/material.module';
     FooterComponent,
     DemoComponent,
     NotfoundComponent,
-    WordsPipe
+    WordsPipe,
+    ReactiveFormsModule
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
