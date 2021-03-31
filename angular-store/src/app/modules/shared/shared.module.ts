@@ -9,6 +9,7 @@ import { DemoComponent } from '../shared/components/demo/demo.component';
 import { NotfoundComponent } from '../shared/components/notfound/notfound.component';
 import { WordsPipe } from '../shared/pipes/words.pipe';
 import { MaterialModule } from '../material/material.module';
+import { WordLimitPipe } from './pipes/word-limit.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MaterialModule } from '../material/material.module';
     FooterComponent,
     DemoComponent,
     NotfoundComponent,
-    WordsPipe
+    WordsPipe,
+    WordLimitPipe
   ],
   exports: [
     HeaderComponent,
@@ -24,7 +26,8 @@ import { MaterialModule } from '../material/material.module';
     DemoComponent,
     NotfoundComponent,
     WordsPipe,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    WordLimitPipe
   ],
   imports: [
     CommonModule,
